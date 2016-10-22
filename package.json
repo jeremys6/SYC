@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev":"nodemon --exec node server",
     "start": "nodemon --exec node server.js"
   },
   "license": "Apache",
@@ -13,7 +12,8 @@
   "dependencies": {
     "body-parser": "~1.15.1",
     "express": "~4.13.4",
-    "request":"~2.75.0"
+    "request":"~2.75.0",
+    "mongoose":"~4.6.4"
   },
   "devDependencies": {
     "nodemon":"^1.10.0"

@@ -1,10 +1,11 @@
 /**
  * Created by jeremysouffir on 21/10/2016.
  */
-var sycMdw = require('../syc/syc-mdw');
+"use strict";
+var sycMdw      = require('../syc/syc-mdw');
 
 
-class sycRoutes{
+class SycRoutes{
     getRouter(router){
         router.post('/set',this._setTransaction.bind(this));
         router.get('/get', this._getAll.bind(this));
@@ -13,15 +14,19 @@ class sycRoutes{
     }
 
     _setTransaction(req,res){
+        var md = new sycMdw();
+        md.addTransaction(req.body,function(){
+            res.json("ok");
+        });
 
     }
     _getAll(req,res){
-
+        res.json("ok");
     }
     _getById(req,res){
-
+        res.json("ok");
     }
 
 }
 
-module.exports = new sycRoutes();
+module.exports = new SycRoutes();

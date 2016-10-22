@@ -1,9 +1,11 @@
 /**
  * Created by jeremysouffir on 21/10/2016.
  */
-var express      =require('express');
-var bodyParser   =require('body-parser');
+"use strict";
 
+var express         =require('express');
+var bodyParser      =require('body-parser');
+var sycRoute        =require('./modules/syc/syc-route');
 
 class server {
     constructor(){
@@ -18,13 +20,15 @@ class server {
     start(){
         this.setupRoutes();
         this.app.listen(this.port);
-        console.log('Magic happen here:' + this.port);
+        console.log('Magic happen here - The server is up on:' + this.port);
     }
 
     setupRoutes(){
+        let router = express.Router();
         this.app.use(express.static('./public/'));
         this.app.get('/', function(req, res) {
             res.render('index.html');
+
         });
         this.app.use('/api/syc', sycRoute.getRouter(router));
     }
