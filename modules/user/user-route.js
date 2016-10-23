@@ -1,25 +1,26 @@
 /**
- * Created by jeremysouffir on 21/10/2016.
+ * Created by jeremysouffir on 22/10/2016.
  */
 "use strict";
-var sycMdw      = require('./syc-mdw');
+var userMdw      = require('./user-mdw');
 var express     = require('express');
 
-class SycRoutes{
+class UserRoutes{
     getRouter(){
         let router = express.Router();
-        router.post('/set',this._setTransaction.bind(this));
+        router.post('/set',this._setUser.bind(this));
         router.get('/get', this._getAll.bind(this));
         router.get('/get/:id', this._getById.bind(this));
         return router;
     }
 
-    _setTransaction(req,res){
-        console.log("set Transaction");
-        var md = new sycMdw();
-        md.addTransaction(req.body,function(){
+    _setUser(req,res){
+        console.log("set User");
+        var md = new userMdw();
+        md.addUser(req.body,function(){
             res.json("ok");
         });
+
     }
     _getAll(req,res){
         res.json("ok");
@@ -30,4 +31,4 @@ class SycRoutes{
 
 }
 
-module.exports = new SycRoutes();
+module.exports = new UserRoutes();

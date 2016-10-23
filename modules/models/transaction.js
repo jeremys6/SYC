@@ -1,13 +1,12 @@
 "use strict";
 var mongoose        = require('mongoose');
-var appConfig       = require('../../config');
 
-mongoose.connect(appConfig.database);
 let Schema = mongoose.Schema;
 let transactionSchema = new Schema({
     make:String,
     model:String,
-    year:String
+    year:String,
+    user:{type:Schema.Types.ObjectId, ref:'User'}
 });
 let Transaction = mongoose.model('Transaction',transactionSchema);
 

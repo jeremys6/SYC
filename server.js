@@ -3,9 +3,14 @@
  */
 "use strict";
 
-var express         =require('express');
-var bodyParser      =require('body-parser');
-var sycRoute        =require('./modules/syc/syc-route');
+var express         = require('express');
+var bodyParser      = require('body-parser');
+var mongoose        = require('mongoose');
+
+var sycRoute        = require('./modules/syc/syc-route');
+var userRoute       = require('./modules/user/user-route');
+var appConfig       = require('./config');
+
 
 class server {
     constructor(){
@@ -19,6 +24,7 @@ class server {
 
     start(){
         this.setupRoutes();
+        this.startMongo();
         this.app.listen(this.port);
         console.log('Magic happen here - The server is up on:' + this.port);
     }
@@ -30,7 +36,11 @@ class server {
             res.render('index.html');
 
         });
-        this.app.use('/api/syc', sycRoute.getRouter(router));
+        this.app.use('/api/user', userRoute.getRouter());
+        this.app.use('/api/syc', sycRoute.getRouter());
+    }
+    startMongo(){
+        mongoose.connect(appConfig.database);
     }
 }
 new server().start();
