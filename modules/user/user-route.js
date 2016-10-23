@@ -23,10 +23,18 @@ class UserRoutes{
 
     }
     _getAll(req,res){
-        res.json("ok");
+        console.log("Get All Users");
+        var md = new userMdw();
+        md.getAll(function(doc){
+            res.json(doc);
+        });
     }
     _getById(req,res){
-        res.json("ok");
+        console.log("Get User by Id:"+req.params.id);
+        var md = new userMdw();
+        md.getById(req.params.id,function(doc){
+            res.json(doc);
+        });
     }
 
 }

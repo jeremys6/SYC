@@ -22,10 +22,18 @@ class SycRoutes{
         });
     }
     _getAll(req,res){
-        res.json("ok");
+        console.log("Get All Transaction");
+        var md = new sycMdw();
+        md.getAll(function(doc){
+            res.json(doc);
+        });
     }
     _getById(req,res){
-        res.json("ok");
+        console.log("Get Transaction by Id:"+req.params.id);
+        var md = new sycMdw();
+        md.getById(req.params.id,function(doc){
+            res.json(doc);
+        });
     }
 
 }

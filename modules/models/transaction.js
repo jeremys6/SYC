@@ -6,7 +6,8 @@ let transactionSchema = new Schema({
     make:String,
     model:String,
     year:String,
-    user:{type:Schema.Types.ObjectId, ref:'User'}
+    user:{type:Schema.Types.ObjectId, ref:'User'},
+    isTransactionActive:Boolean
 });
 let Transaction = mongoose.model('Transaction',transactionSchema);
 

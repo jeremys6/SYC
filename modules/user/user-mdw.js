@@ -17,6 +17,20 @@ class UserMdw{
             next();
         });
     }
+    getById(id,next){
+        User.findById(id,function(err,myDoc){
+            if(err) throw err;
+            console.log(myDoc);
+            next(myDoc);
+        })
+    }
+    getAll(next){
+        User.find({},function(err,myDoc){
+            if(err) throw err;
+            console.log(myDoc);
+            next(myDoc);
+        });
+    }
 }
 
 module.exports =  UserMdw;

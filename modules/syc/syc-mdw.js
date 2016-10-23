@@ -17,6 +17,20 @@ class SycMdw{
             next();
         });
     }
+    getById(id,next){
+        Transaction.findById(id,function(err,myDoc){
+            if(err) throw err;
+            console.log(myDoc);
+            next(myDoc);
+        })
+    }
+    getAll(next){
+        Transaction.find({},function(err,myDoc){
+            if(err) throw err;
+            console.log(myDoc);
+            next(myDoc);
+        });
+    }
 }
 
 module.exports =  SycMdw;
