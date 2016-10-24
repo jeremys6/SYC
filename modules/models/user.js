@@ -12,7 +12,7 @@ let userSchema = new Schema({
     email:String,
     phone:String,
     birthday:String,
-    createdDate:Date
+    createdDate:{ type: Date, default: Date.now }
 });
 let User = mongoose.model('User',userSchema);
 

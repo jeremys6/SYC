@@ -11,7 +11,6 @@ class UserMdw{
         this.connection = db.connect();
     }
     addUser(data,next){
-        data.createdDate = new Date();
         let user = new User(data);
         let connection =this.connection;
         user.save().then(function(doc){

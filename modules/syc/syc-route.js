@@ -12,6 +12,8 @@ class SycRoutes{
         router.get('/get', this._getAll.bind(this));
         router.get('/get/:id', this._getById.bind(this));
         router.get('/getByUserId/:id', this._getByUserId.bind(this));
+        router.get('/getOptions', this._getOptions.bind(this));
+        router.post('/setOption', this._setOption.bind(this));
         return router;
     }
 
@@ -40,6 +42,21 @@ class SycRoutes{
         console.log("Get Transaction by User Id:"+req.params.id);
         var md = new sycMdw();
         md.search({user:req.params.id},function(doc){
+            res.json(doc);
+        });
+    }
+    _getOptions(req,res){
+        console.log("Get all Options");
+        var md = new sycMdw();
+        md.getAllOptions(function(doc){
+            res.json(doc);
+        });
+
+    }
+    _setOption(req,res){
+        console.log("Set new Option");
+        var md = new sycMdw();
+        md.addOption(req.body,function(doc){
             res.json(doc);
         });
     }
