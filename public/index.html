@@ -1,11 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <title>Yeah Men</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 </head>
-<body>
-Hello Yaniv,
-Do your magic here
+<body ng-app="sycApp" ng-cloak>
+
+<div ng-controller="sycWizardController" layout="column" layout-padding="" ng-cloak="" class="inputdemoIcons" ng-app="MyApp">
+
+    <md-toolbar class="md-theme-light">
+        <h2 class="md-toolbar-tools">
+            <span>User Details</span>
+        </h2>
+    </md-toolbar>
+    <md-content layout-padding="">
+        <div>
+            <form name="userForm">
+
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm="">
+                        <label>First name</label>
+                        <input ng-model="vm.user.firstName">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm="">
+                        <label>Last Name</label>
+                        <input ng-model="vm.user.lastName">
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>Email</label>
+                        <input ng-model="vm.user.email" type="email">
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>Phone</label>
+                        <input ng-model="vm.user.phone">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm="">
+                        <label>Brithday</label>
+                        <md-datepicker ng-model="vm.user.birthday"></md-datepicker>
+                    </md-input-container>
+                </div>
+
+
+            </form>
+        </div>
+    </md-content>
+
+    <md-toolbar class="md-theme-light">
+        <h2 class="md-toolbar-tools">
+            <span>Car Details</span>
+        </h2>
+    </md-toolbar>
+    <md-content layout-padding="">
+        <div>
+            <form name="userForm">
+
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm="">
+                        <label>Make</label>
+                        <input ng-model="vm.car.make">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm="">
+                        <label>Model</label>
+                        <input ng-model="vm.car.model">
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>Year</label>
+                        <input ng-model="vm.car.year" type="number">
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>Hand</label>
+                        <input ng-model="vm.car.hand" type="number">
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>aestheticCondition</label>
+                        <input ng-model="vm.car.aestheticCondition" type="number">
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>mechanicalCondition</label>
+                        <input ng-model="vm.car.mechanicalCondition" type="number">
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>odometer</label>
+                        <input ng-model="vm.car.odometer" type="number">
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>options</label>
+                        <input ng-model="vm.car.options" type="number">
+                    </md-input-container>
+
+                </div>
+
+
+            </form>
+        </div>
+    </md-content>
+
+    <md-toolbar class="md-theme-light">
+        <h2 class="md-toolbar-tools">
+            <span>Car Pictures</span>
+        </h2>
+    </md-toolbar>
+    <md-content layout-padding="">
+        <div>
+
+        </div>
+    </md-content>
+
+    <md-toolbar class="md-theme-light">
+        <h2 class="md-toolbar-tools">
+            <span>Car Comments</span>
+        </h2>
+    </md-toolbar>
+    <md-content layout-padding="">
+        <div>
+
+        </div>
+    </md-content>
+
+</div>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
+-->
+
+<!-- Angular Material requires Angular.js Libraries -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script src="./app/js/app.js"></script>
 </body>
 </html>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->
