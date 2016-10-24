@@ -3,7 +3,7 @@
  */
 "use strict";
 var Transaction     = require('../models/transaction');
-var db              =require('../dbHelper/dbConnectionHelper');
+var db              = require('../dbHelper/dbConnectionHelper');
 
 class SycMdw{
     constructor() {
@@ -40,9 +40,11 @@ class SycMdw{
         });
     }
     search(query,next){
+        let connection = this.connection;
         Transaction.find(query,function(err,myDoc){
             if(err) throw err;
             console.log(myDoc);
+            db.close(connection);
             next(myDoc);
         })
     }
