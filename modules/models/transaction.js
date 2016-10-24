@@ -23,7 +23,11 @@ let transactionSchema = new Schema({
     comment:String,
     isTransactionActive:Boolean,
     transactionDate:{ type: Date, default: Date.now },
-    lastUpdateDate:{ type: Date, default: Date.now }
+    lastUpdateDate:{ type: Date, default: Date.now },
+    argusPrice:Number,
+    customerPriceMin:Number,
+    customerPriceMax:Number,
+    offeredPrice:Number
 });
 
 let Transaction = mongoose.model('Transaction',transactionSchema);

@@ -21,6 +21,18 @@ class SycMdw{
         });
     }
 
+    updateTransaction(data,next){
+        let connection = this.connection;
+        Transaction.findById(data._id,function(err,myDoc){
+            if(err) throw err;
+            console.log(myDoc);
+            mydoc.isTransactionActive = data.isTransactionActive;
+            myDoc.lastUpdateDate = new Date();
+            db.close(connection);
+            next(myDoc);
+        })
+    }
+
     getById(id,next){
         let connection = this.connection;
         Transaction.findById(id,function(err,myDoc){
