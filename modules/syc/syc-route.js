@@ -43,15 +43,6 @@ class SycRoutes{
             res.json(doc);
         });
     }
-    _getByEmail(req,res){
-        console.log("Get Transaction by User Id:"+req.params.id);
-        var md = new sycMdw();
-        md.search({user:req.params.email},function(doc){
-            res.json(doc);
-        });
-    }
-
-
 }
 
 module.exports = new SycRoutes();
