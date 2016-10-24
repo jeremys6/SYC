@@ -6,6 +6,7 @@ let transactionSchema = new Schema({
     make:String,
     model:String,
     year:String,
+    pictures:[stri]
     user:{type:Schema.Types.ObjectId, ref:'User'},
     isTransactionActive:Boolean
 });

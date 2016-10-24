@@ -13,7 +13,8 @@
     "body-parser": "~1.15.1",
     "express": "~4.13.4",
     "request":"~2.75.0",
-    "mongoose":"~4.6.4"
+    "mongoose":"~4.6.4",
+    "cloudinary":"~1.4.2"
   },
   "devDependencies": {
     "nodemon":"^1.10.0"
