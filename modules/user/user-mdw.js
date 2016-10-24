@@ -31,6 +31,13 @@ class UserMdw{
             next(myDoc);
         });
     }
+    search(query,next){
+        User.find(query,function(err,myDoc){
+            if(err) throw err;
+            console.log(myDoc);
+            next(myDoc);
+        })
+    }
 }
 
 module.exports =  UserMdw;

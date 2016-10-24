@@ -11,6 +11,7 @@ class SycRoutes{
         router.post('/set',this._setTransaction.bind(this));
         router.get('/get', this._getAll.bind(this));
         router.get('/get/:id', this._getById.bind(this));
+        router.get('/getByUserId/:id', this._getByUserId.bind(this));
         return router;
     }
 
@@ -35,6 +36,21 @@ class SycRoutes{
             res.json(doc);
         });
     }
+    _getByUserId(req,res){
+        console.log("Get Transaction by User Id:"+req.params.id);
+        var md = new sycMdw();
+        md.search({user:req.params.id},function(doc){
+            res.json(doc);
+        });
+    }
+    _getByEmail(req,res){
+        console.log("Get Transaction by User Id:"+req.params.id);
+        var md = new sycMdw();
+        md.search({user:req.params.email},function(doc){
+            res.json(doc);
+        });
+    }
+
 
 }
 
