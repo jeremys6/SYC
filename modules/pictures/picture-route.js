@@ -1,8 +1,9 @@
 /**
- * Created by jeremysouffir on 22/10/2016.
+ * Created by jeremysouffir on 24/10/2016.
  */
+
 "use strict";
-var userMdw      = require('./user-mdw');
+var pictureMdw      = require('./picture-mdw');
 var express     = require('express');
 
 class UserRoutes{

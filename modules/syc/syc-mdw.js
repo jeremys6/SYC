@@ -39,6 +39,13 @@ class SycMdw{
             next(myDoc);
         });
     }
+    search(query,next){
+        Transaction.find(query,function(err,myDoc){
+            if(err) throw err;
+            console.log(myDoc);
+            next(myDoc);
+        })
+    }
 }
 
 module.exports =  SycMdw;

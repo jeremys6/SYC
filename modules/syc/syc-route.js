@@ -14,6 +14,7 @@ class SycRoutes{
         router.get('/getByUserId/:id', this._getByUserId.bind(this));
         return router;
     }
+
     _setTransaction(req,res){
         console.log("set Transaction");
         var md = new sycMdw();
@@ -49,6 +50,7 @@ class SycRoutes{
             res.json(doc);
         });
     }
+
 
 }
 
