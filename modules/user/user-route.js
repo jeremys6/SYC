@@ -11,6 +11,7 @@ class UserRoutes{
         router.post('/set',this._setUser.bind(this));
         router.get('/get', this._getAll.bind(this));
         router.get('/get/:id', this._getById.bind(this));
+        router.get('/getByEmail/:email', this._getByEmail.bind(this));
         return router;
     }
 
@@ -33,6 +34,13 @@ class UserRoutes{
         console.log("Get User by Id:"+req.params.id);
         var md = new userMdw();
         md.getById(req.params.id,function(doc){
+            res.json(doc);
+        });
+    }
+    _getByEmail(req,res){
+        console.log("Get User by email:"+req.params.email);
+        var md = new userMdw();
+        md.search({email:req.params.email},function(doc){
             res.json(doc);
         });
     }
